@@ -22,12 +22,20 @@ const users = [
 
 // hieronder komt jullie code - veel succes
 
-//john doe weg doen
+//john doe weg doen met namen en emails
 let username = document.querySelector(".username")
 let email = document.querySelector(".email")
 
-username.textContent = "Namen"
-email.textContent = "Emails"
+users.forEach((namen)=>{
+  const deNamen = document.createElement("p")
+  deNamen.innerHTML = namen.fullname
+  username.appendChild(deNamen)
+})
+users.forEach((namen)=>{
+  const deEmails = document.createElement("p")
+  deEmails.innerHTML = namen.email
+  email.appendChild(deEmails)
+})
 
 //variabelen toevoeg knop
 const nieuweNaam = document.querySelector("#name")
@@ -61,6 +69,8 @@ filterKnop.addEventListener("click", ()=>{
 
 })
 
+
+//kijken of de 4letters matchen
 const namenLijst = (fullname, filterBtn) => {
   let gefilterd = [];
 
