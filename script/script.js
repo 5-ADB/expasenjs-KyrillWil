@@ -20,14 +20,22 @@ const users = [
   },
 ];
 
+// hieronder komt jullie code - veel succes
+
+//john doe weg doen
+let username = document.querySelector(".username")
+let email = document.querySelector(".email")
+
+username.textContent = "Namen"
+email.textContent = "Emails"
+
+//variabelen toevoeg knop
 const nieuweNaam = document.querySelector("#name")
 const nieuweEmail = document.querySelector("#email")
 const nieuwePassword = document.querySelector("#password")
 const registreer = document.querySelector("#registreer")
 
-// hieronder komt jullie code - veel succes
-
-//actie bij toevegen
+//actie bij toevoegen
 registreer.addEventListener("click", ()=>{
   const nieuweUser = {
     fullname: nieuweNaam.value,
@@ -35,13 +43,20 @@ registreer.addEventListener("click", ()=>{
     password: nieuwePassword.value
   }
   users.push(nieuweUser) 
+  console.log("gelukt");
+  console.log(users);
+  if (nieuweNaam || nieuweEmail || nieuwePassword == ''){
+    alert("Vul alles in")
+    return
+  }  
 })
 
-//filter variabelen
+
+//variabelen filter
 const filterNaam = document.querySelector("#filterNaam")
 const filterKnop = document.querySelector("#filterBtn")
 
-//filter actie
+//actie bij filteren
 filterKnop.addEventListener("click", ()=>{
 
 })
@@ -51,7 +66,7 @@ const namenLijst = (fullname, filterBtn) => {
 
   if (filterBtn){
     gefilterd = users.filter((user)=>{
-      
+      return user.fullname 
     })
   }
 }
